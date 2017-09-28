@@ -7,27 +7,27 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 {
     public class AssetTypeManager : IRepositoryManager<AssetType>
     {
-        public readonly AssetTypeGetway _assetTypeGetway;
+        public readonly AssetTypeGetway AssetTypeGetway;
 
         public AssetTypeManager()
         {
-            _assetTypeGetway = new AssetTypeGetway();
+            AssetTypeGetway = new AssetTypeGetway();
         }
 
 
         public AssetType Get(int id)
         {
-            return _assetTypeGetway.Get(id);
+            return AssetTypeGetway.Get(id);
         }
 
         public IEnumerable<AssetType> GetAll()
         {
-            return _assetTypeGetway.GetAll();
+            return AssetTypeGetway.GetAll();
         }
 
         public int Add(AssetType entity)
         {
-            return _assetTypeGetway.Add(entity);
+            return AssetTypeGetway.Add(entity);
         }
 
         public int AddRange(IEnumerable<AssetType> entities)
@@ -37,12 +37,12 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 
         public int Update(AssetType entity)
         {
-            return _assetTypeGetway.Update(entity);
+            return AssetTypeGetway.Update(entity);
         }
 
         public int Remove(AssetType entity)
         {
-            return _assetTypeGetway.Remove(entity);
+            return AssetTypeGetway.Remove(entity);
         }
 
         public int RemoveRange(IEnumerable<AssetType> entities)

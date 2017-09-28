@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetSetups\AssetGroupManager.cs" />
+    <Compile Include="AssetSetups\AssetLocationManager.cs" />
+    <Compile Include="AssetSetups\AssetManufacturerManager.cs" />
+    <Compile Include="AssetSetups\AssetModelManager.cs" />
     <Compile Include="AssetSetups\AssetTypeManager.cs" />
     <Compile Include="HRM\EmployeeManager.cs" />
     <Compile Include="IRepositoryManager.cs" />
