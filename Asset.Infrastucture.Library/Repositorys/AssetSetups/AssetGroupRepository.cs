@@ -4,6 +4,7 @@ using AssetSqlDatabase.Library.DatabaseContext;
 using Core.Repository.Library.Infrastucture;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 
 namespace Asset.Infrastucture.Library.Repositorys.AssetSetups
 {
@@ -21,6 +22,11 @@ namespace Asset.Infrastucture.Library.Repositorys.AssetSetups
         public IEnumerable<AssetGroup> GetAssetGroupsWithType()
         {
             return AssetDbContext.AssetGroups.Include(c => c.AssetType);
+        }
+
+        public IEnumerable<AssetGroup> GetAssetGroupsByType(int assetTypeId)
+        {
+            return AssetDbContext.AssetGroups.Include(c => c.AssetType).Where(c => c.AssetTypeId == assetTypeId);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Asset.DataAccess.Library.AssetSetups;
 using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
-using System;
 using System.Collections.Generic;
 
 namespace Asset.BisnessLogic.Library.AssetSetups
@@ -16,12 +15,12 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 
         public AssetGroup Get(int id)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.Get(id);
         }
 
         public IEnumerable<AssetGroup> GetAll()
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.GetAll();
         }
 
         public IEnumerable<AssetGroup> GetAssetGroupsWithType()
@@ -29,29 +28,35 @@ namespace Asset.BisnessLogic.Library.AssetSetups
             return _assetGroupGetway.GetAssetGroupsWithType();
         }
 
+
+        public IEnumerable<AssetGroup> GetAssetGroupsByType(int assetTypeId)
+        {
+            return _assetGroupGetway.GetAssetGroupsByType(assetTypeId);
+        }
+
         public int Add(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.Add(entity);
         }
 
         public int AddRange(IEnumerable<AssetGroup> entities)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.AddRange(entities);
         }
 
         public int Update(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.Update(entity);
         }
 
         public int Remove(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.Remove(entity);
         }
 
         public int RemoveRange(IEnumerable<AssetGroup> entities)
         {
-            throw new NotImplementedException();
+            return _assetGroupGetway.RemoveRange(entities);
         }
     }
 }

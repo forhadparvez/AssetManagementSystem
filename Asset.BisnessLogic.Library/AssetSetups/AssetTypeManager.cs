@@ -17,7 +17,7 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 
         public AssetType Get(int id)
         {
-            throw new NotImplementedException();
+            return _assetTypeGetway.Get(id);
         }
 
         public IEnumerable<AssetType> GetAll()
@@ -27,7 +27,7 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 
         public int Add(AssetType entity)
         {
-            throw new NotImplementedException();
+            return _assetTypeGetway.Add(entity);
         }
 
         public int AddRange(IEnumerable<AssetType> entities)
@@ -37,12 +37,12 @@ namespace Asset.BisnessLogic.Library.AssetSetups
 
         public int Update(AssetType entity)
         {
-            throw new NotImplementedException();
+            return _assetTypeGetway.Update(entity);
         }
 
         public int Remove(AssetType entity)
         {
-            throw new NotImplementedException();
+            return _assetTypeGetway.Remove(entity);
         }
 
         public int RemoveRange(IEnumerable<AssetType> entities)

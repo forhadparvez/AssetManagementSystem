@@ -17,7 +17,7 @@ namespace Asset.DataAccess.Library.AssetSetups
 
         public AssetGroup Get(int id)
         {
-            throw new NotImplementedException();
+            return _assetSetupUnitOfWork.AssetGroup.Get(id);
         }
 
         public IEnumerable<AssetGroup> GetAll()
@@ -31,9 +31,15 @@ namespace Asset.DataAccess.Library.AssetSetups
             return _assetSetupUnitOfWork.AssetGroup.GetAssetGroupsWithType();
         }
 
+        public IEnumerable<AssetGroup> GetAssetGroupsByType(int assetTypeId)
+        {
+            return _assetSetupUnitOfWork.AssetGroup.GetAssetGroupsByType(assetTypeId);
+        }
+
         public int Add(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            _assetSetupUnitOfWork.AssetGroup.Add(entity);
+            return _assetSetupUnitOfWork.Complete();
         }
 
         public int AddRange(IEnumerable<AssetGroup> entities)
@@ -43,12 +49,14 @@ namespace Asset.DataAccess.Library.AssetSetups
 
         public int Update(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            _assetSetupUnitOfWork.AssetGroup.Update(entity);
+            return _assetSetupUnitOfWork.Complete();
         }
 
         public int Remove(AssetGroup entity)
         {
-            throw new NotImplementedException();
+            _assetSetupUnitOfWork.AssetGroup.Remove(entity);
+            return _assetSetupUnitOfWork.Complete();
         }
 
         public int RemoveRange(IEnumerable<AssetGroup> entities)
