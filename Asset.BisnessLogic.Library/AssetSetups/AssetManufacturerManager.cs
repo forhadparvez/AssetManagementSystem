@@ -24,6 +24,11 @@ namespace Asset.BisnessLogic.Library.AssetSetups
             return _assetManufacturerGetway.GetAll();
         }
 
+        public IEnumerable<AssetManufacurer> GetManufacurersByGroupId(int groupId)
+        {
+            return _assetManufacturerGetway.GetManufacurersByGroupId(groupId);
+        }
+
         public int Add(AssetManufacurer entity)
         {
             return _assetManufacturerGetway.Add(entity);

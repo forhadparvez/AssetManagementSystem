@@ -25,6 +25,12 @@ namespace Asset.DataAccess.Library.AssetSetups
             return _assetSetupUnitOfWork.AssetManufacurer.GetAll();
         }
 
+        public IEnumerable<AssetManufacurer> GetManufacurersByGroupId(int groupId)
+        {
+            return _assetSetupUnitOfWork.AssetManufacurer.Find(c => c.AssetGroupId == groupId);
+        }
+
+
         public int Add(AssetManufacurer entity)
         {
             _assetSetupUnitOfWork.AssetManufacurer.Add(entity);

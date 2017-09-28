@@ -5,5 +5,6 @@ namespace Asset.Core.Repository.Library.Repositorys.AssetsModels.AssetSetups
 {
     public interface IAssetManufacurerRepository : IRepository<AssetManufacurer>
     {
+
     }
 }

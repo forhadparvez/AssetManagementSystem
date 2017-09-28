@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201709280938573_CreateAssetGroup.Designer.cs">
       <DependentUpon>201709280938573_CreateAssetGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709281118296_CreateManufacturerAndModel.cs" />
+    <Compile Include="Migrations\201709281118296_CreateManufacturerAndModel.Designer.cs">
+      <DependentUpon>201709281118296_CreateManufacturerAndModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709280938573_CreateAssetGroup.resx">
       <DependentUpon>201709280938573_CreateAssetGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709281118296_CreateManufacturerAndModel.resx">
+      <DependentUpon>201709281118296_CreateManufacturerAndModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

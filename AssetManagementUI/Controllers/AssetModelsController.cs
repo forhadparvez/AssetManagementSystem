@@ -27,6 +27,12 @@ namespace AssetManagementUI.Controllers
             return View();
         }
 
+        public JsonResult GetManufacturerByGroupid(int groupId)
+        {
+            var managactuer = _manufacturerManager.GetManufacurersByGroupId(groupId);
+            return Json(managactuer, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult New()
         {
             var assetModelVm = new AssetModelViewModel()

@@ -14,5 +14,6 @@ namespace Asset.Infrastucture.Library.Repositorys.AssetSetups
         }
 
         public AssetDbContext AssetDbContext { get { return Context as AssetDbContext; } }
+
     }
 }
