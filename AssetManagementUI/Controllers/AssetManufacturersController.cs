@@ -1,12 +1,21 @@
-﻿using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
+﻿using Asset.BisnessLogic.Library.AssetSetups;
 using AssetManagementUI.ViewModels.AssetSetups;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace AssetManagementUI.Controllers
 {
     public class AssetManufacturersController : Controller
     {
+        private readonly AssetManufacturerManager _manufacturerManager;
+        private readonly AssetGroupManager _assetGroupManager;
+
+
+        public AssetManufacturersController()
+        {
+            _assetGroupManager = new AssetGroupManager();
+            _manufacturerManager = new AssetManufacturerManager();
+        }
+
         // GET: AssetManufacturers
         public ActionResult Index()
         {
@@ -18,10 +27,7 @@ namespace AssetManagementUI.Controllers
         {
             var manufactureVm = new AssetManufacturerViewModel()
             {
-                AssetGroups = new List<AssetGroup>()
-                {
-
-                }
+                AssetGroups = _assetGroupManager.GetAll()
             };
             return View("AssetManufacturerForm", manufactureVm);
         }

@@ -1,12 +1,21 @@
-﻿using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
+﻿using Asset.BisnessLogic.Library.AssetSetups;
 using AssetManagementUI.ViewModels.AssetSetups;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace AssetManagementUI.Controllers
 {
     public class AssetGroupsController : Controller
     {
+        private readonly AssetTypeManager _assetTypeManager;
+
+        private readonly AssetGroupManager _assetGroupManager;
+
+        public AssetGroupsController()
+        {
+            _assetGroupManager = new AssetGroupManager();
+            _assetTypeManager = new AssetTypeManager();
+        }
+
         // GET: AssetGroups
         public ActionResult Index()
         {
@@ -17,10 +26,7 @@ namespace AssetManagementUI.Controllers
         {
             var assetGroupVm = new AssetGroupViewModels()
             {
-                AssetTypes = new List<AssetType>()
-                {
-
-                }
+                AssetTypes = _assetTypeManager.GetAll()
             };
             return View("AssetGroupForm", assetGroupVm);
         }
