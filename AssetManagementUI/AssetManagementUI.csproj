@@ -496,6 +496,7 @@
     <Content Include="Views\AssetManufacturers\AssetManufacturerForm.cshtml" />
     <Content Include="Views\AssetModels\AssetModelForm.cshtml" />
     <Content Include="Views\Employees\EmployeeForm.cshtml" />
+    <Content Include="Views\Vendors\VendorForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

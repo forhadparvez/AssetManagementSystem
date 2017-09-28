@@ -1,0 +1,80 @@
+﻿@using System.Web.Optimization
+@model AssetManagementUI.ViewModels.Purchases.VendorViewModel
+@{
+    ViewBag.Title = "VendorForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-offset-1 col-sm-offset-1 col-md-10 col-sm-10">
+    <div class="col-md-8 col-sm-8 noPadingLeft">
+        <h2>New Vendor</h2>
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+        <p>@Html.ActionLink("Back To List", "Index", "Vendors", null, new { @class = "btn btn-default align-right" })</p>
+
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Save", "Vendors"))
+{
+    <div id="saveForm" class="col-md-offset-1 col-sm-offset-1 col-md-6 col-sm-8">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Name)
+            @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.ShortName)
+            @Html.TextBoxFor(c => c.ShortName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.ShortName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.ContactNo)
+            @Html.TextBoxFor(c => c.ContactNo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.ContactNo)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.Email)
+            @Html.TextBoxFor(c => c.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Email)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.Address)
+            @Html.TextBoxFor(c => c.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Address)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.Comments)
+            @Html.TextBoxFor(c => c.Comments, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Comments)
+        </div>
+
+        <div class="form-group">
+            @Html.HiddenFor(c => c.Id)
+            @Html.AntiForgeryToken()
+            <button id="saveButton" type="submit" class="btn btn-primary">Save</button>
+        </div>
+
+        <div class="@ViewBag.CssClass" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>@ViewBag.MessageType</strong>@ViewBag.Message
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/FormScript/vendor.js"></script>
+
+}
+

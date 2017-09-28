@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using AssetManagementUI.ViewModels.Purchases;
+using System.Web.Mvc;
 
 namespace AssetManagementUI.Controllers
 {
@@ -11,10 +12,25 @@ namespace AssetManagementUI.Controllers
         }
 
 
-        [HttpGet]
-        public PartialViewResult Create()
+        public ActionResult New()
         {
-            return PartialView("PartialView/Vendors/_CreatePartialView");
+            return View("VendorForm");
+        }
+
+        [HttpPost]
+        public ActionResult Save(VendorViewModel vendorVm)
+        {
+            return View("VendorForm");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            return View("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View("Index");
         }
     }
 }
