@@ -1,18 +1,17 @@
-﻿using Asset.Infrastucture.Library.UnitOfWorks;
+﻿using Asset.DataAccess.Library.AssetSetups;
 using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
-using AssetSqlDatabase.Library.DatabaseContext;
 using System;
 using System.Collections.Generic;
 
-namespace Asset.DataAccess.Library.AssetSetups
+namespace Asset.BisnessLogic.Library.AssetSetups
 {
-    public class AssetGroupGetway : IRepositoryGetway<AssetGroup>
+    public class AssetGroupManager : IRepositoryManager<AssetGroup>
     {
-        private readonly AssetSetupUnitOfWork _assetSetupUnitOfWork;
+        private readonly AssetGroupGetway _assetGroupGetway;
 
-        public AssetGroupGetway()
+        public AssetGroupManager()
         {
-            _assetSetupUnitOfWork = new AssetSetupUnitOfWork(new AssetDbContext());
+            _assetGroupGetway = new AssetGroupGetway();
         }
 
         public AssetGroup Get(int id)
@@ -22,13 +21,12 @@ namespace Asset.DataAccess.Library.AssetSetups
 
         public IEnumerable<AssetGroup> GetAll()
         {
-            return _assetSetupUnitOfWork.AssetGroup.GetAll();
+            throw new NotImplementedException();
         }
-
 
         public IEnumerable<AssetGroup> GetAssetGroupsWithType()
         {
-            return _assetSetupUnitOfWork.AssetGroup.GetAssetGroupsWithType();
+            return _assetGroupGetway.GetAssetGroupsWithType();
         }
 
         public int Add(AssetGroup entity)

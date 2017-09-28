@@ -2,6 +2,7 @@
 using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
 using AssetSqlDatabase.Library.DatabaseContext;
 using Core.Repository.Library.Infrastucture;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace Asset.Infrastucture.Library.Repositorys.AssetSetups
@@ -14,5 +15,12 @@ namespace Asset.Infrastucture.Library.Repositorys.AssetSetups
         }
 
         public AssetDbContext AssetDbContext { get { return Context as AssetDbContext; } }
+
+
+
+        public IEnumerable<AssetGroup> GetAssetGroupsWithType()
+        {
+            return AssetDbContext.AssetGroups.Include(c => c.AssetType);
+        }
     }
 }

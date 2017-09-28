@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201709280912536_CreateAssetTypeTable.Designer.cs">
       <DependentUpon>201709280912536_CreateAssetTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709280938573_CreateAssetGroup.cs" />
+    <Compile Include="Migrations\201709280938573_CreateAssetGroup.Designer.cs">
+      <DependentUpon>201709280938573_CreateAssetGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709280912536_CreateAssetTypeTable.resx">
       <DependentUpon>201709280912536_CreateAssetTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709280938573_CreateAssetGroup.resx">
+      <DependentUpon>201709280938573_CreateAssetGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

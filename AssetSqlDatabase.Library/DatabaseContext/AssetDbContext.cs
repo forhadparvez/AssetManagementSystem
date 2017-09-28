@@ -26,6 +26,8 @@ namespace AssetSqlDatabase.Library.DatabaseContext
 
 
         public DbSet<AssetType> AssetTypes { get; set; }
+        public DbSet<AssetGroup> AssetGroups { get; set; }
+
 
     }
 }
