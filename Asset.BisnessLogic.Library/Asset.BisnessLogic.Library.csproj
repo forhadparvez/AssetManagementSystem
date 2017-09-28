@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetSetups\AssetTypeManager.cs" />
     <Compile Include="HRM\EmployeeManager.cs" />
     <Compile Include="IRepositoryManager.cs" />
     <Compile Include="Organizations\BranchManager.cs" />

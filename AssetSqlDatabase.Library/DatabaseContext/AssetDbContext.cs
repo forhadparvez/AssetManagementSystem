@@ -24,5 +24,8 @@ namespace AssetSqlDatabase.Library.DatabaseContext
 
         public DbSet<Employee> Employees { get; set; }
 
+
+        public DbSet<AssetType> AssetTypes { get; set; }
+
     }
 }

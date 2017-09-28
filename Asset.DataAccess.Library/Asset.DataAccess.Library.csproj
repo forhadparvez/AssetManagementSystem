@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetSetups\AssetGroupGetway.cs" />
     <Compile Include="AssetSetups\AssetLocationGetway.cs" />
+    <Compile Include="AssetSetups\AssetTypeGetway.cs" />
     <Compile Include="Hrs\EmployeeGetway.cs" />
     <Compile Include="IRepositoryGetway.cs" />
     <Compile Include="Organizations\BranchGetway.cs" />
