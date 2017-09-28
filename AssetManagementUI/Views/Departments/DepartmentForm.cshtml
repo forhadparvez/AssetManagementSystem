@@ -1,0 +1,71 @@
+﻿@using System.Web.Optimization
+@model AssetManagementUI.ViewModels.DepartmentViewModel
+@{
+    ViewBag.Title = "DepartmentForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-offset-1 col-sm-offset-1 col-md-10 col-sm-10">
+    <div class="col-md-8 col-sm-8 noPadingLeft">
+        <h2>New Department</h2>
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+        <p>@Html.ActionLink("Back To List", "Index", "Departments", null, new { @class = "btn btn-default align-right" })</p>
+
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Save", "Departments"))
+{
+    <div id="saveForm" class="col-md-offset-1 col-sm-offset-1 col-md-6 col-sm-8">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Department.OrganizationId)
+            @Html.DropDownListFor(c => c.Department.OrganizationId, new SelectList(Model.Organizations, "Id", "Name"), "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Department.OrganizationId)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.Department.Name)
+            @Html.TextBoxFor(c => c.Department.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Department.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.Department.ShortName)
+            @Html.TextBoxFor(c => c.Department.ShortName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Department.ShortName)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.Department.DepartmentCode)
+            @Html.TextBoxFor(c => c.Department.DepartmentCode, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.Department.DepartmentCode)
+        </div>
+
+        <div class="form-group">
+            @Html.HiddenFor(c => c.Department.Id)
+            @Html.AntiForgeryToken()
+            <button id="saveButton" type="submit" class="btn btn-primary">Save</button>
+        </div>
+
+        <div class="@ViewBag.CssClass" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>@ViewBag.MessageType</strong>@ViewBag.Message
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/FormScript/department.js"></script>
+
+}
+
+
+
+

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Asset.Models.Library.EntityModels.OrganizationModels.Organization>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Organizations</h2>
+
+<p>@Html.ActionLink("New Organization", "New", "Organizations", null, new {@class="btn btn-primary"})</p>
+
+<table id="organizationTable" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Organization Name</th>
+        <th>Short Name</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    
+    <tbody></tbody>
+
+</table>
+
+@section scripts
+{
+    <script src="~/Scripts/FormScript/organization.js"></script>
+    
+}

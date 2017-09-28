@@ -1,0 +1,81 @@
+﻿@using System.Web.Optimization
+@model AssetManagementUI.ViewModels.AssetSetups.AssetModelViewModel
+@{
+    ViewBag.Title = "AssetModelForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-offset-1 col-sm-offset-1 col-md-10 col-sm-10">
+    <div class="col-md-8 col-sm-8 noPadingLeft">
+        <h2>New Model</h2>
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+        <p>@Html.ActionLink("Back To List", "Index", "AssetModels", null, new { @class = "btn btn-default align-right" })</p>
+
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Save", "AssetModels"))
+{
+    <div id="saveForm" class="col-md-offset-1 col-sm-offset-1 col-md-6 col-sm-8">
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.AssetManufacurerId)
+            @Html.DropDownListFor(c => c.AssetModel.AssetManufacurerId, new SelectList(Model.AssetManufacurers, "Id", "Name"), "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.AssetModel.AssetManufacurerId)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.AssetGroupId)
+            @Html.DropDownListFor(c => c.AssetModel.AssetGroupId, new SelectList(Model.AssetGroups, "Id", "Name"), "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.AssetModel.AssetGroupId)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.Name)
+            @Html.TextBoxFor(c => c.AssetModel.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.AssetModel.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.ShortName)
+            @Html.TextBoxFor(c => c.AssetModel.ShortName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(c => c.AssetModel.ShortName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.Code)
+            @Html.TextBoxFor(c => c.AssetModel.Code, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(c => c.AssetModel.Code)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetModel.Description)
+            @Html.TextBoxFor(c => c.AssetModel.Description, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(c => c.AssetModel.Description)
+        </div>
+
+        <div class="form-group">
+            @Html.HiddenFor(c => c.AssetModel.Id)
+            @Html.AntiForgeryToken()
+            <button id="saveButton" type="submit" class="btn btn-primary">Save</button>
+        </div>
+
+        <div class="@ViewBag.CssClass" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>@ViewBag.MessageType</strong>@ViewBag.Message
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/FormScript/branch.js"></script>
+
+}
+
+
