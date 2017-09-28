@@ -42,6 +42,12 @@
             @Html.TextBoxFor(c => c.AssetManufacurer.Code, new { @class = "form-control", @readonly = "readonly" })
             @Html.ValidationMessageFor(c => c.AssetManufacurer.Code)
         </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(c => c.AssetManufacurer.Description)
+            @Html.TextBoxFor(c => c.AssetManufacurer.Description, new { @class = "form-control"})
+            @Html.ValidationMessageFor(c => c.AssetManufacurer.Description)
+        </div>
 
         <div class="form-group">
             @Html.HiddenFor(c => c.AssetManufacurer.Id)

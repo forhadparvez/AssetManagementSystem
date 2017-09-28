@@ -1,4 +1,6 @@
-﻿using AssetManagementUI.ViewModels.AssetSetups;
+﻿using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
+using AssetManagementUI.ViewModels.AssetSetups;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace AssetManagementUI.Controllers
@@ -13,7 +15,14 @@ namespace AssetManagementUI.Controllers
 
         public ActionResult New()
         {
-            return View("AssetGroupForm");
+            var assetGroupVm = new AssetGroupViewModels()
+            {
+                AssetTypes = new List<AssetType>()
+                {
+
+                }
+            };
+            return View("AssetGroupForm", assetGroupVm);
         }
 
         [HttpPost]

@@ -52,7 +52,7 @@
         
         <div class="form-group">
             @Html.LabelFor(c => c.AssetModel.Description)
-            @Html.TextBoxFor(c => c.AssetModel.Description, new { @class = "form-control", @readonly = "readonly" })
+            @Html.TextBoxFor(c => c.AssetModel.Description, new { @class = "form-control" })
             @Html.ValidationMessageFor(c => c.AssetModel.Description)
         </div>
 
