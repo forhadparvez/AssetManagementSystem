@@ -31,6 +31,7 @@ namespace Asset.Models.Library.EntityModels.AssetsModels.AssetEntrys
         public string AssetId { get; set; }
         public string Name { get; set; }
         public string SerialNo { get; set; }
+        public string Brand { get; set; }
         public bool Status { get; set; }
         public byte[] Attachment { get; set; }
     }

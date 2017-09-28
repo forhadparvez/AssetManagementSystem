@@ -1,4 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using Asset.Models.Library.EntityModels;
+using Asset.Models.Library.EntityModels.AssetsModels.AssetSetups;
+using Asset.Models.Library.EntityModels.OrganizationModels;
+using AssetManagementUI.ViewModels.AssetEntrys;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace AssetManagementUI.Controllers
 {
@@ -10,9 +15,36 @@ namespace AssetManagementUI.Controllers
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult New()
         {
-            return View();
+            var assetEntryVm = new AssetEntryViewModel()
+            {
+                Organizations = new List<Organization>() { },
+                Branches = new List<Branch>() { },
+                AssetLocations = new List<AssetLocation>() { },
+                AssetTypes = new List<AssetType>() { },
+                AssetGroups = new List<AssetGroup>() { },
+                AssetManufacurers = new List<AssetManufacurer>() { },
+                AssetModels = new List<AssetModel>() { },
+                Status = new List<Status>() { }
+            };
+            return View("AssetEntryForm", assetEntryVm);
+        }
+
+        [HttpPost]
+        public ActionResult Save(AssetEntryViewModel assetEntryVm)
+        {
+            return View("AssetEntryForm");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            return View("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View("Index");
         }
     }
 }

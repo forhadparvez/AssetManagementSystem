@@ -5,11 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Assset List</h2>
+
+<p>@Html.ActionLink("New Asset", "New", "AssetEntrys", null, new { @class = "btn btn-primary" })</p>
+
+<table id="organizationTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody></tbody>
+
+</table>
 
 @section scripts
 {
-    <script type="text/javascript">
-        $("#operationModelManue").show();
-    </script>
+    <script src="~/Scripts/FormScript/assetEntry.js"></script>
+
 }

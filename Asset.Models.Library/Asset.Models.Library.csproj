@@ -57,6 +57,7 @@
     <Compile Include="EntityModels\OrganizationModels\Designation.cs" />
     <Compile Include="EntityModels\OrganizationModels\Organization.cs" />
     <Compile Include="EntityModels\Purchases\Vendor.cs" />
+    <Compile Include="EntityModels\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

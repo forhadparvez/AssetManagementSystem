@@ -312,6 +312,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bloodhound.js" />
     <Content Include="Scripts\bloodhound.min.js" />
+    <Content Include="Scripts\FormScript\assetEntry.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -442,6 +443,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AssetEntrys\AssetEntryViewModel.cs" />
     <Compile Include="ViewModels\AssetSetups\AssetGroupViewModels.cs" />
     <Compile Include="ViewModels\AssetSetups\AssetLocationViewModel.cs" />
     <Compile Include="ViewModels\AssetSetups\AssetManufacturerViewModel.cs" />
@@ -483,7 +485,6 @@
     <Content Include="Views\Shared\PartialView\AssetModels\_CreatePartialView.cshtml" />
     <Content Include="Views\Shared\PartialView\Employees\_CreatePartialView.cshtml" />
     <Content Include="Views\Shared\PartialView\Vendors\_CreatePartialView.cshtml" />
-    <Content Include="Views\AssetEntrys\Create.cshtml" />
     <Content Include="Views\CheckOut\Create.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Organizations\Index.cshtml" />
@@ -498,6 +499,7 @@
     <Content Include="Views\Employees\EmployeeForm.cshtml" />
     <Content Include="Views\Vendors\VendorForm.cshtml" />
     <Content Include="Views\AssetLocations\AssetLocationForm.cshtml" />
+    <Content Include="Views\AssetEntrys\AssetEntryForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
