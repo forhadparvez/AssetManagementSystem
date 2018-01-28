@@ -25,6 +25,11 @@ namespace Asset.BisnessLogic.Library.AssetSetups
             return _assetModelGetway.GetAll();
         }
 
+        public IEnumerable<AssetModel> GetAllByGroupAndManufacturer()
+        {
+            return _assetModelGetway.GetAllByGroupAndManufacturer();
+        }
+
         public int Add(AssetModel entity)
         {
             return _assetModelGetway.Add(entity);
@@ -48,6 +53,22 @@ namespace Asset.BisnessLogic.Library.AssetSetups
         public int RemoveRange(IEnumerable<AssetModel> entities)
         {
             throw new NotImplementedException();
+        }
+
+        public bool IsShortNameExist(string shortName, int groupId, int assetManufacurerId)
+        {
+            bool isShortNameExist = false;
+            var assetModel = _assetModelGetway.GetByShortName(shortName, groupId, assetManufacurerId);
+            if (assetModel != null)
+            {
+                isShortNameExist = true;
+            }
+            return isShortNameExist;
+        }
+
+        public IEnumerable<AssetModel> GetAllModelByManufacturerId(int manuId)
+        {
+            return _assetModelGetway.GetAllModelByManufacturerId(manuId);
         }
     }
 }

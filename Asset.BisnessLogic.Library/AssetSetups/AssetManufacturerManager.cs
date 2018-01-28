@@ -53,5 +53,21 @@ namespace Asset.BisnessLogic.Library.AssetSetups
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<AssetManufacurer> GetAllManufacturerWithGroup()
+        {
+            return _assetManufacturerGetway.GetAllManufacturerWithGroup();
+        }
+
+        public bool IsShortNameExist(string shortName, int groupId)
+        {
+            bool isShortNameExist = false;
+            var assetManufacturer = _assetManufacturerGetway.GetByGroupIdAndShortName(shortName, groupId);
+            if (assetManufacturer != null)
+            {
+                isShortNameExist = true;
+            }
+            return isShortNameExist;
+        }
     }
 }

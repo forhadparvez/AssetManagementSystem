@@ -1,0 +1,92 @@
+﻿@using AssetManagement.Mvc.Controllers
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu">
+            <li class="header">HEADER</li>
+            <li class="">
+                @* "@(ViewContext.RouteData.Values["Action"].ToString() == nameof(HomeController.Index) ? "active" : "")" *@
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span>Home</span></a>
+            </li>
+            
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-th-list"></i> <span>Operation</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" id="operationManu">
+                    <li><a href=@Url.Action("Index", "CheckOuts")>Check Out</a></li>
+                    <li><a href=@Url.Action("Index", "AssetEntrys")>Asset Entry</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-sitemap"></i> <span>Organization Setup</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" id="ogranizationManu">
+                    <li><a href=@Url.Action("Index", "Organizations")>Organizations</a></li>
+                    <li><a href=@Url.Action("Index", "Branchs")>Branchs</a></li>
+                    <li><a href=@Url.Action("Index", "AssetLocations")>Asset Locations</a></li>
+                </ul>
+            </li>
+            
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa fa-wrench"></i> <span>Asset Setup</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" id="assetSetupManu">
+                    <li><a href=@Url.Action("Index", "AssetTypes")>Asset Types</a></li>
+                    <li><a href=@Url.Action("Index", "AssetGroups")>Asset Groups</a></li>
+                    <li><a href=@Url.Action("Index", "AssetManufacturers")>Asset Manufacturers</a></li>
+                    <li><a href=@Url.Action("Index", "AssetModels")>Asset Models</a></li>
+                </ul>
+            </li>
+            
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i> <span>Human Resource Setup</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" id="hrManu"> 
+                    <li><a href=@Url.Action("Index", "Employees")>Employee</a></li>
+                </ul>
+            </li>
+            
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Purchase Setup</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" id="parchageManu"> 
+                    <li><a href=@Url.Action("Index", "Vendors")>Vendor</a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

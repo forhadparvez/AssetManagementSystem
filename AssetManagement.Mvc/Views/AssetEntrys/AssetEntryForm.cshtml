@@ -1,0 +1,124 @@
+﻿@using System.Web.Optimization
+@model AssetManagement.Mvc.Models.ViewModels.Assets.AssetEntryViewModel
+@{
+    ViewBag.Title = "Asset Entry Form";
+}
+
+<div class="row">
+    <div class=" col-sm-offset-1 col-md-offset-1 col-sm-10 col-md-10 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Asset Entry Form</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-10 col-sm-10">
+                    @using (Html.BeginForm("Save", "AssetEntrys"))
+                    {
+                        <div id="saveForm">
+                            <div class=" col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.OrganizationId)
+                                    @Html.DropDownListFor(c => c.OrganizationId, new SelectList(Model.Organizations, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.OrganizationId, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.BranchId)
+                                    @Html.DropDownListFor(c => c.BranchId, new SelectList(Model.Branchs, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.BranchId, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetLocationId)
+                                    @Html.DropDownListFor(c => c.AssetLocationId, new SelectList(Model.AssetLocations, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetLocationId, "", new { @class = "text-danger" })
+                                </div>
+                                
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetId)
+                                    @Html.TextBoxFor(c => c.AssetId, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetId, "", new { @class = "text-danger" })
+                                </div>
+                                
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.Name)
+                                    @Html.TextBoxFor(c => c.Name, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.Name, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.SerialNo)
+                                    @Html.TextBoxFor(c => c.SerialNo, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.SerialNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            
+                            <div class=" col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetTypeId)
+                                    @Html.DropDownListFor(c => c.AssetTypeId, new SelectList(Model.AssetTypes, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetTypeId, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetGroupId)
+                                    @Html.DropDownListFor(c => c.AssetGroupId, new SelectList(Model.AssetGroups, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetGroupId, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetManufacurerId)
+                                    @Html.DropDownListFor(c => c.AssetManufacurerId, new SelectList(Model.AssetManufacurers, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetManufacurerId, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.AssetModelId)
+                                    @Html.DropDownListFor(c => c.AssetModelId, new SelectList(Model.AssetModels, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.AssetModelId, "", new { @class = "text-danger" })
+                                </div>
+                                
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.Brand)
+                                    @Html.TextBoxFor(c => c.Brand, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.Brand, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(c => c.Status)
+                                    @Html.DropDownListFor(c => c.Status, new SelectList(Model.Statuses, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(c => c.Status, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    @Html.HiddenFor(c => c.Id)
+                                    @Html.AntiForgeryToken()
+                                    <button id="saveButton" type="submit" class="btn btn-primary">Save</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <p>@ViewBag.Message</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                </div>
+                
+                <div class="col-md-2 col-sm-2">
+                    <br />
+                    <p>@Html.ActionLink("Back To List", "Index", "AssetEntrys", null, new { @class = "btn btn-info btn-sm" })</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/FormScript/assetEntry.js"></script>
+}
+

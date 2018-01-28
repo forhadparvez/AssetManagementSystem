@@ -25,6 +25,11 @@ namespace Asset.DataAccess.Library.AssetSetups
 
         }
 
+        public IEnumerable<AssetModel> GetAllByGroupAndManufacturer()
+        {
+            return _assetSetupUnitOfWork.AssetModel.GetAllByGroupAndManufacturer();
+        }
+
         public int Add(AssetModel entity)
         {
             _assetSetupUnitOfWork.AssetModel.Add(entity);
@@ -51,6 +56,20 @@ namespace Asset.DataAccess.Library.AssetSetups
         public int RemoveRange(IEnumerable<AssetModel> entities)
         {
             throw new NotImplementedException();
+        }
+
+        public AssetModel GetByShortName(string shortName, int groupId, int assetManufacurerId)
+        {
+            return
+                _assetSetupUnitOfWork.AssetModel.SingleOrDefault(
+                    c =>
+                        c.ShortName == shortName && c.AssetGroupId == groupId &&
+                        c.AssetManufacurerId == assetManufacurerId);
+        }
+
+        public IEnumerable<AssetModel> GetAllModelByManufacturerId(int manuId)
+        {
+            return _assetSetupUnitOfWork.AssetModel.Find(c => c.AssetManufacurerId == manuId);
         }
     }
 }

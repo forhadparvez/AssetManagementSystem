@@ -58,5 +58,16 @@ namespace Asset.BisnessLogic.Library.AssetSetups
         {
             return _assetGroupGetway.RemoveRange(entities);
         }
+
+        public bool IsShortNameExist(string shortName, int assetType)
+        {
+            bool isShortNameExist = false;
+            var group = _assetGroupGetway.GetByShortNameAndAssetType(shortName, assetType);
+            if (group != null)
+            {
+                isShortNameExist = true;
+            }
+            return isShortNameExist;
+        }
     }
 }

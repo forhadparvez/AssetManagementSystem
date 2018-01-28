@@ -1,0 +1,69 @@
+﻿@using System.Web.Optimization
+@model AssetManagement.Mvc.Models.ViewModels.Organizations.BranchViewModel
+@{
+    ViewBag.Title = "Branch Form";
+}
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Branch Form</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-8 col-sm-8">
+                    @using (Html.BeginForm("Save", "Branchs"))
+                    {
+                        <div id="saveForm">
+                            <div class="form-group">
+                                @Html.LabelFor(c => c.OrganizationId)
+                                @Html.DropDownListFor(c => c.OrganizationId, new SelectList(Model.Organizations, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(c => c.OrganizationId, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(c => c.Name)
+                                @Html.TextBoxFor(c => c.Name, new { @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(c => c.Name, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(c => c.ShortName)
+                                @Html.TextBoxFor(c => c.ShortName, new { @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(c => c.ShortName, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(c => c.BranchCode)
+                                @Html.TextBoxFor(c => c.BranchCode, new { @class = "form-control input-sm", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(c => c.BranchCode, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.HiddenFor(c => c.Id)
+                                @Html.AntiForgeryToken()
+                                <button id="saveButton" type="submit" class="btn btn-primary">Save</button>
+                            </div>
+
+                            <div class="form-group">
+                                <p>@ViewBag.Message</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+                
+                <div class="col-md-4 col-sm-4">
+                    <br />
+                    <p>@Html.ActionLink("Back To List", "Index", "Branchs", null, new { @class = "btn btn-info btn-sm" })</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/FormScript/branch.js"></script>
+}

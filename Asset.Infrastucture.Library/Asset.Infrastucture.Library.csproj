@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Asset.Infrastucture.Library</RootNamespace>
     <AssemblyName>Asset.Infrastucture.Library</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorys\AssetEntrys\AssetEntryRepository.cs" />
+    <Compile Include="Repositorys\AssetEntrys\AttachmentRepository.cs" />
+    <Compile Include="Repositorys\AssetEntrys\FinanceRepository.cs" />
+    <Compile Include="Repositorys\AssetEntrys\NoteRepository.cs" />
+    <Compile Include="Repositorys\AssetEntrys\ServiceOrRepairingRepository.cs" />
+    <Compile Include="Repositorys\AssetOperation\CheckOutRepository.cs" />
     <Compile Include="Repositorys\AssetSetups\AssetGroupRepository.cs" />
     <Compile Include="Repositorys\AssetSetups\AssetLocationRepository.cs" />
     <Compile Include="Repositorys\AssetSetups\AssetManufactureRepository.cs" />
@@ -60,7 +67,9 @@
     <Compile Include="Repositorys\Organizations\DesignationRepository.cs" />
     <Compile Include="Repositorys\Organizations\OrganizationRepository.cs" />
     <Compile Include="Repositorys\Purchases\VendorRepository.cs" />
+    <Compile Include="UnitOfWorks\AssetEntryUnitOfWork.cs" />
     <Compile Include="UnitOfWorks\AssetLocationUnitOfWork.cs" />
+    <Compile Include="UnitOfWorks\AssetOperationUnitOfWork.cs" />
     <Compile Include="UnitOfWorks\AssetSetupUnitOfWork.cs" />
     <Compile Include="UnitOfWorks\DepartmentDesignationUnitOfWork.cs" />
     <Compile Include="UnitOfWorks\HrUnitOfWork.cs" />
@@ -89,9 +98,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositorys\AssetEntrys\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

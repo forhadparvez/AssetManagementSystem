@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Asset.BisnessLogic.Library</RootNamespace>
     <AssemblyName>Asset.BisnessLogic.Library</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetEntrys\AssetEntryManager.cs" />
+    <Compile Include="AssetEntrys\AttachmentManager.cs" />
+    <Compile Include="AssetEntrys\FinanceManager.cs" />
+    <Compile Include="AssetEntrys\NoteManager.cs" />
+    <Compile Include="AssetEntrys\ServiceOrRepairingManager.cs" />
+    <Compile Include="AssetOperation\CheckOutManager.cs" />
     <Compile Include="AssetSetups\AssetGroupManager.cs" />
     <Compile Include="AssetSetups\AssetLocationManager.cs" />
     <Compile Include="AssetSetups\AssetManufacturerManager.cs" />

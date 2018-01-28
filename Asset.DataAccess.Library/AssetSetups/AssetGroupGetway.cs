@@ -63,5 +63,10 @@ namespace Asset.DataAccess.Library.AssetSetups
         {
             throw new NotImplementedException();
         }
+
+        public AssetGroup GetByShortNameAndAssetType(string shortName, int assetType)
+        {
+            return _assetSetupUnitOfWork.AssetGroup.SingleOrDefault(c => c.ShortName == shortName && c.AssetTypeId == assetType);
+        }
     }
 }

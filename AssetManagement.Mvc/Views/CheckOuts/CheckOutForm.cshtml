@@ -1,0 +1,78 @@
+﻿@model AssetManagement.Mvc.Models.ViewModels.Assets.CheckOutViewModel
+@{
+    ViewBag.Title = "Check Out Form";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Check Out Form</h3>
+            </div>
+            <div class="box-body">
+                @using (Html.BeginForm("Save", "CheckOuts"))
+                {
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.EmployeeId)
+                            @Html.DropDownListFor(c => c.EmployeeId, new SelectList(Model.Employees, "Id", "Code"), "", new {@class = "form-control input-sm"})
+                            @Html.ValidationMessageFor(c => c.EmployeeId, "", new {@class = "text-danger"})
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.EntryDate)
+                            @Html.TextBoxFor(c => c.EntryDate, new { @class = "form-control input-sm datepicker" })
+                            @Html.ValidationMessageFor(c => c.EntryDate, "", new {@class = "text-danger"})
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.ReturnDate)
+                            @Html.TextBoxFor(c => c.ReturnDate, new {@class = "form-control input-sm"})
+                            @Html.ValidationMessageFor(c => c.ReturnDate, "", new {@class = "text-danger"})
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.AssetLocationId)
+                            @Html.DropDownListFor(c => c.AssetLocationId, new SelectList(Model.AssetLocations, "Id", "Name"), "", new {@class = "form-control input-sm"})
+                            @Html.ValidationMessageFor(c => c.AssetLocationId, "", new {@class = "text-danger"})
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Commants)
+                            @Html.TextBoxFor(c => c.Commants, new {@class = "form-control input-sm"})
+                            @Html.ValidationMessageFor(c => c.Commants, "", new {@class = "text-danger"})
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" id="saveButton" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.AssetEntryId)
+                            @Html.DropDownListFor(c => c.AssetEntryId, new SelectList(Model.AssetEntries, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                            @Html.ValidationMessageFor(c => c.AssetEntryId, "", new { @class = "text-danger" })
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" id="assignButton" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+                        <div class="form-group">
+                            <ul id="assetList" class="list-group"></ul>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/typeahead.bundle.js"></script>
+    <script src="~/Scripts/FormScript/checkOut.js"></script>
+}

@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
-using Asset.Core.Repository.Library.Repositorys.HrModels;
+﻿using Asset.Core.Repository.Library.Repositorys.HrModels;
 using Asset.Models.Library.EntityModels.HrModels;
+using AssetSqlDatabase.Library.DatabaseContext;
 using Core.Repository.Library.Infrastucture;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using AssetSqlDatabase.Library.DatabaseContext;
 
 namespace Asset.Infrastucture.Library.Repositorys.Hrs
 {
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        public EmployeeRepository(DbContext context) : base(context)
+        public EmployeeRepository(DbContext context)
+            : base(context)
         {
         }
 
@@ -24,7 +25,7 @@ namespace Asset.Infrastucture.Library.Repositorys.Hrs
 
         public IEnumerable<Employee> GetEmployeesWithOrganization()
         {
-            var employees = AssetDbContext.Employees.Include(c => c.Organization);
+            var employees = AssetDbContext.Employees.Include(c => c.Organization).Include(c => c.Branch);
             return employees;
         }
     }

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Vendor List";
+}
+<p>@Html.ActionLink("New Vendor", "New", "Vendors", null, new { @class = "btn btn-primary" })</p>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Vendor List</h3>
+            </div>
+            <div class="box-body">
+                <table id="vendorTable" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Short Name</th>
+                            <th>ContactNo</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/FormScript/vendor.js"></script>
+
+}
+

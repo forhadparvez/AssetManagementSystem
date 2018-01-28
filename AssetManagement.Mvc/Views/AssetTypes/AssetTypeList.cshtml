@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Asset Type List";
+}
+
+<p>@Html.ActionLink("New Asset Type", "New", "AssetTypes", null, new { @class = "btn btn-primary" })</p>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Asset Type List</h3>
+            </div>
+            <div class="box-body">
+                <table id="assetTypeTable" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Type Name</th>
+                            <th>Short Name</th>
+                            <th>Code</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+     <script src="~/Scripts/FormScript/assetType.js"></script>
+
+}
+

@@ -63,9 +63,9 @@ namespace Asset.DataAccess.Library.Organizations
             return _organizationUnitOfWork.Complete();
         }
 
-        public Branch GetBranchByShortName(string shortName)
+        public Branch GetBranchByShortName(string shortName, int orgId)
         {
-            return _organizationUnitOfWork.Branch.GetBranchByShortName(shortName);
+            return _organizationUnitOfWork.Branch.SingleOrDefault(c=>c.ShortName==shortName&& c.OrganizationId==orgId);
         }
 
         public IEnumerable<Branch> Find(int id)
@@ -76,6 +76,11 @@ namespace Asset.DataAccess.Library.Organizations
         public Branch SingleBranch(int id)
         {
             return _organizationUnitOfWork.Branch.SingleOrDefault(c => c.Id == id);
+        }
+
+        public IEnumerable<Branch> GetBranchByOrgId(int orgId)
+        {
+            return _organizationUnitOfWork.Branch.Find(c => c.OrganizationId == orgId);
         }
     }
 }

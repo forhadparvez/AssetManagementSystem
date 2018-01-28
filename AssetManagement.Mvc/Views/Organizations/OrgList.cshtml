@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Organization List";
+}
+
+<p>@Html.ActionLink("New Organization", "New", "Organizations", null, new { @class = "btn btn-primary" })</p>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Organization List</h3>
+            </div>
+            <div class="box-body">
+                <table id="organizationTable" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Organization Name</th>
+                            <th>Short Name</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script src="~/Scripts/FormScript/organization.js"></script>
+}
+

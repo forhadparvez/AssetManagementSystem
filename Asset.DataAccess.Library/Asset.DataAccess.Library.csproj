@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Asset.DataAccess.Library</RootNamespace>
     <AssemblyName>Asset.DataAccess.Library</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetEntrys\AssetEntryGetway.cs" />
+    <Compile Include="AssetEntrys\AttachmentGetway.cs" />
+    <Compile Include="AssetEntrys\FinanceGetway.cs" />
+    <Compile Include="AssetEntrys\NoteGetway.cs" />
+    <Compile Include="AssetEntrys\ServiceOrRepairingGetway.cs" />
+    <Compile Include="AssetOperation\CheckOutGetway.cs" />
     <Compile Include="AssetSetups\AssetGroupGetway.cs" />
     <Compile Include="AssetSetups\AssetLocationGetway.cs" />
     <Compile Include="AssetSetups\AssetManufacturerGetway.cs" />

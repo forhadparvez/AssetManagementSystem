@@ -59,5 +59,17 @@ namespace Asset.DataAccess.Library.AssetSetups
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<AssetManufacurer> GetAllManufacturerWithGroup()
+        {
+            return _assetSetupUnitOfWork.AssetManufacurer.GetAllManufacturerWithGroup();
+        }
+
+        public AssetManufacurer GetByGroupIdAndShortName(string shortName, int groupId)
+        {
+            return
+                _assetSetupUnitOfWork.AssetManufacurer.SingleOrDefault(
+                    c => c.ShortName == shortName && c.AssetGroupId == groupId);
+        }
     }
 }

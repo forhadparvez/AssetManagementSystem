@@ -53,5 +53,22 @@ namespace Asset.DataAccess.Library.AssetSetups
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<AssetLocation> GetAllByOrgAndBroanc()
+        {
+            return _assetLocationUnitOfWork.AssetLocation.GetAllByOrgAndBroanc();
+        }
+
+        public AssetLocation GetByOrgAndBranchAndShortName(string shortName, int orgId, int branchId)
+        {
+            return
+                _assetLocationUnitOfWork.AssetLocation.SingleOrDefault(
+                    c => c.ShortName == shortName && c.OrganizationId == orgId && c.BranchId == branchId);
+        }
+
+        public IEnumerable<AssetLocation> GetAssetLocationByBranchId(int branchId)
+        {
+            return _assetLocationUnitOfWork.AssetLocation.Find(c => c.BranchId == branchId);
+        }
     }
 }

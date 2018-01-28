@@ -48,5 +48,26 @@ namespace Asset.BisnessLogic.Library.AssetSetups
         {
             throw new System.NotImplementedException();
         }
+
+        public IEnumerable<AssetLocation> GetAllByOrgAndBroanc()
+        {
+            return _assetLocationGetway.GetAllByOrgAndBroanc();
+        }
+
+        public bool IsShortNameExist(string shortName, int orgId, int branchId)
+        {
+            bool isShortNameEixst = false;
+            var location = _assetLocationGetway.GetByOrgAndBranchAndShortName(shortName, orgId, branchId);
+            if (location != null)
+            {
+                isShortNameEixst = true;
+            }
+            return isShortNameEixst;
+        }
+
+        public IEnumerable<AssetLocation> GetAssetLocationByBranchId(int branchId)
+        {
+            return _assetLocationGetway.GetAssetLocationByBranchId(branchId);
+        }
     }
 }

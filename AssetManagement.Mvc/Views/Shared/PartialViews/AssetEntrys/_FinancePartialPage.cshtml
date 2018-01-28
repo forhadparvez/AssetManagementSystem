@@ -1,0 +1,51 @@
+﻿@model AssetManagement.Mvc.Models.ViewModels.Assets.FinanceViewModel
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        @using (Html.BeginForm())   
+        {
+            
+            <div id="orgSaveForm">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.VendorId)
+                        @Html.DropDownListFor(c => c.VendorId, new SelectList(Model.Vendor, "Id", "Name"), "", new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.VendorId, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.ParchaseOrderNo)
+                        @Html.TextBoxFor(c => c.ParchaseOrderNo, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.ParchaseOrderNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.ParchasePrice)
+                        @Html.TextBoxFor(c => c.ParchasePrice, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.ParchasePrice, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.PurchaseDate)
+                        @Html.TextBoxFor(c => c.PurchaseDate, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.PurchaseDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        @Html.HiddenFor(c => c.AssetEntryId)
+                        @Html.AntiForgeryToken()
+                        <button id="saveFinanceButton" type="button" class="btn btn-primary">Save</button>
+                    </div>
+                    <div class="form-group">
+                        <p>@ViewBag.Message</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="~/Scripts/FormScript/AssetEdit/finance.js"></script>

@@ -1,0 +1,60 @@
+﻿@model AssetManagement.Mvc.Models.ViewModels.Assets.ServiceViewModel
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        @using (Html.BeginForm())
+        {
+            <div id="orgSaveForm">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.Description)
+                        @Html.TextBoxFor(c => c.Description, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.Description, "", new { @class = "text-danger" })
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.ServiceDate)
+                        @Html.TextBoxFor(c => c.ServiceDate, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.ServiceDate, "", new { @class = "text-danger" })
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.ServiceBy)
+                        @Html.TextBoxFor(c => c.ServiceBy, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.ServiceBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.ServiceingCostDecimal)
+                        @Html.TextBoxFor(c => c.ServiceingCostDecimal, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.ServiceingCostDecimal, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.PartsCostDecimal)
+                        @Html.TextBoxFor(c => c.PartsCostDecimal, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.PartsCostDecimal, "", new { @class = "text-danger" })
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.TaxDecimal)
+                        @Html.TextBoxFor(c => c.TaxDecimal, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.TaxDecimal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        @Html.HiddenFor(c => c.AssetEntryId)
+                        @Html.AntiForgeryToken()
+                        <button id="saveServiceButton" type="button" class="btn btn-primary">Save</button>
+                    </div>
+                    <div class="form-group">
+                        <p>@ViewBag.Message</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

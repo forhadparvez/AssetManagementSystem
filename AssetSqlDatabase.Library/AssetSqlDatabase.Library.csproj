@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssetSqlDatabase.Library</RootNamespace>
     <AssemblyName>AssetSqlDatabase.Library</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +70,34 @@
     <Compile Include="Migrations\201709281118296_CreateManufacturerAndModel.Designer.cs">
       <DependentUpon>201709281118296_CreateManufacturerAndModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709290650027_UpdateEmployeeTableAndCreateVendor.cs" />
+    <Compile Include="Migrations\201709290650027_UpdateEmployeeTableAndCreateVendor.Designer.cs">
+      <DependentUpon>201709290650027_UpdateEmployeeTableAndCreateVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710091032055_UpdateEmployee.cs" />
+    <Compile Include="Migrations\201710091032055_UpdateEmployee.Designer.cs">
+      <DependentUpon>201710091032055_UpdateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710091604539_CreateTableAssetEntry.cs" />
+    <Compile Include="Migrations\201710091604539_CreateTableAssetEntry.Designer.cs">
+      <DependentUpon>201710091604539_CreateTableAssetEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710100910211_AssetEntryAdditionalTable.cs" />
+    <Compile Include="Migrations\201710100910211_AssetEntryAdditionalTable.Designer.cs">
+      <DependentUpon>201710100910211_AssetEntryAdditionalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710120825031_CreateCheckOut.cs" />
+    <Compile Include="Migrations\201710120825031_CreateCheckOut.Designer.cs">
+      <DependentUpon>201710120825031_CreateCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710120934473_ModelChange.cs" />
+    <Compile Include="Migrations\201710120934473_ModelChange.Designer.cs">
+      <DependentUpon>201710120934473_ModelChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121149062_ChangeCheckOutModel.cs" />
+    <Compile Include="Migrations\201710121149062_ChangeCheckOutModel.Designer.cs">
+      <DependentUpon>201710121149062_ChangeCheckOutModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +126,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709281118296_CreateManufacturerAndModel.resx">
       <DependentUpon>201709281118296_CreateManufacturerAndModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290650027_UpdateEmployeeTableAndCreateVendor.resx">
+      <DependentUpon>201709290650027_UpdateEmployeeTableAndCreateVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091032055_UpdateEmployee.resx">
+      <DependentUpon>201710091032055_UpdateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091604539_CreateTableAssetEntry.resx">
+      <DependentUpon>201710091604539_CreateTableAssetEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710100910211_AssetEntryAdditionalTable.resx">
+      <DependentUpon>201710100910211_AssetEntryAdditionalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710120825031_CreateCheckOut.resx">
+      <DependentUpon>201710120825031_CreateCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710120934473_ModelChange.resx">
+      <DependentUpon>201710120934473_ModelChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121149062_ChangeCheckOutModel.resx">
+      <DependentUpon>201710121149062_ChangeCheckOutModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

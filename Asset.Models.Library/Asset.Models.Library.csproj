@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Asset.Models.Library</RootNamespace>
     <AssemblyName>Asset.Models.Library</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,7 @@
     <Compile Include="EntityModels\AssetsModels\AssetEntrys\Finance.cs" />
     <Compile Include="EntityModels\AssetsModels\AssetEntrys\Note.cs" />
     <Compile Include="EntityModels\AssetsModels\AssetEntrys\ServiceOrRepairing.cs" />
+    <Compile Include="EntityModels\AssetsModels\AssetOpetation\CheckIn.cs" />
     <Compile Include="EntityModels\AssetsModels\AssetOpetation\CheckOut.cs" />
     <Compile Include="EntityModels\AssetsModels\AssetSetups\AssetGroup.cs" />
     <Compile Include="EntityModels\AssetsModels\AssetSetups\AssetLocation.cs" />

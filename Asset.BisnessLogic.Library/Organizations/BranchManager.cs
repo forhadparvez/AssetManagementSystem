@@ -28,10 +28,10 @@ namespace Asset.BisnessLogic.Library.Organizations
             return _branchGetway.GetBranchWithOrganization();
         }
 
-        public bool IsBranchShortNameExist(string shortName)
+        public bool IsBranchShortNameExist(string shortName, int ogrId)
         {
             bool isShortNameExist = false;
-            var branch = GetBranchByShortName(shortName);
+            var branch = GetBranchByShortName(shortName, ogrId);
             if (branch != null)
             {
                 isShortNameExist = true;
@@ -39,9 +39,9 @@ namespace Asset.BisnessLogic.Library.Organizations
             return isShortNameExist;
         }
 
-        private Branch GetBranchByShortName(string shortName)
+        private Branch GetBranchByShortName(string shortName, int orgId)
         {
-            return _branchGetway.GetBranchByShortName(shortName);
+            return _branchGetway.GetBranchByShortName(shortName, orgId);
         }
 
         public IEnumerable<Branch> FindById(int id)
@@ -77,6 +77,11 @@ namespace Asset.BisnessLogic.Library.Organizations
         public int RemoveRange(IEnumerable<Branch> entities)
         {
             return _branchGetway.RemoveRange(entities);
+        }
+
+        public IEnumerable<Branch> GetBranchByOrgId(int orgId)
+        {
+            return _branchGetway.GetBranchByOrgId(orgId);
         }
     }
 }
